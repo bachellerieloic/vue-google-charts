@@ -1,10 +1,9 @@
 <template>
   <div id="app" style="width:60vw; margin-left:auto; margin-right:auto">
-    <GChart type="PieChart" :data="chartData" :options="chartOptions"/>
     <GChart type="LineChart" :data="chartData" :options="chartOptions"/>
     <GChart type="ColumnChart" :data="chartData" :options="chartOptions"/>
     <GChart type="AreaChart" :data="chartData" :options="chartOptions"/>
-
+    <GChart type="PieChart" :data="chartData" :options="chartOptions"/>
     <button @click="updateData" style="margin-top:20px">Click to change the data</button>
   </div>
 </template>

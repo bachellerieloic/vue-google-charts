@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Reactivity with Vue & Google Chart</h1>
+    <h5>Loic Bachellerie</h5>
     <Chart/>
   </div>
 </template>
