@@ -5,6 +5,10 @@
     <GChart type="AreaChart" :data="chartData" :options="chartOptions"/>
     <GChart type="PieChart" :data="chartData" :options="chartOptions"/>
     <button @click="updateData" style="margin-top:20px">Click to change the data</button>
+<!--    <button @click="addYear" v-if="!yearAdded" style="margin-top:20px">Add Year</button>-->
+<!--    <button @click="removeYear" v-else style="margin-top:20px">Remove Year</button>-->
+
+    {{ JSON.stringify(chartDataRows)}}
   </div>
 </template>
 
@@ -18,6 +22,8 @@ export default {
   data () {
     return {
       chartDataHeader: ['Year', 'Sales', 'Expenses', 'Profit'],
+      year: ['2018', 200, 300, 400, 500],
+      yearAdded: false,
       chartDataRows: [
         ['2014', 1000, 400, 200],
         ['2015', 1170, 460, 250],
@@ -51,6 +57,17 @@ export default {
               return item
             })
           })
+    },
+    addYear() {
+      this.chartDataRows.push(this.year);
+      this.yearAdded = true;
+      this.updateData();
+    },
+    removeYear(){
+      this.chartDataRows.pop();
+      this.yearAdded = false;
+      this.updateData();
+
     }
   },
   created () {
